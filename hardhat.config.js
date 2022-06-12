@@ -9,7 +9,8 @@ module.exports = {
   defaultNetwork: "mainnet",
   etherscan: {
     apiKey: {
-      bscTestnet: process.env.BSC_API_KEY
+      bscTestnet: process.env.BSC_API_KEY,
+      rinkeby: process.env.ETHERSCAN_API_KEY
     },
   },
   networks: {
@@ -23,6 +24,8 @@ module.exports = {
       accounts:[process.env.PRIVATE_KEY],
       saveDeployments: true,
       chainId: 4,
+      gas: 2100000,
+      gasPrice: 8000000000
     },
     bscTestnet: {
       url: "https://data-seed-prebsc-1-s1.binance.org:8545",
@@ -38,7 +41,7 @@ module.exports = {
     }
   },
   solidity: {
-  version: "0.8.0",
+  version: "0.8.14",
   settings: {
     optimizer: {
       enabled: true
